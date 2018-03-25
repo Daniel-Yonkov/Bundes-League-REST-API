@@ -13,9 +13,12 @@ use Illuminate\Http\Request;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+//Using a callback return just for the fun :)
 Route::get('/', function () {
     $request = new MatchData();
     $response = $request->get();
+    dd($response);
     return view('matches.upcoming',compact('response'));
 });
+//using controller to handle the actions
+Route::get('all', 'MatchesController@index');
