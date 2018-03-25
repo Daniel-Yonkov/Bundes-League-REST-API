@@ -35,7 +35,7 @@
 			<th>Date (UTC)</th>
 			<th>Match</th>
 		</tr>
-				@foreach($request as $matches)
+				@foreach($response as $matches)
 			<tr>
 				<td>
 					{{\Carbon\Carbon::parse($matches->MatchDateTimeUTC)}}	

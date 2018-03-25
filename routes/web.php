@@ -1,5 +1,6 @@
 <?php
 
+use App\Repository\Matches\MatchData;
 use Illuminate\Http\Request;
 
 /*
@@ -14,7 +15,7 @@ use Illuminate\Http\Request;
 */
 
 Route::get('/', function () {
-    $request=json_decode(file_get_contents('https://www.openligadb.de/api/getmatchdata/bl1'));
-    // dd($request[0]);
-    return view('matches.upcoming',compact('request'));
+    $request = new MatchData();
+    $response = $request->get();
+    return view('matches.upcoming',compact('response'));
 });
