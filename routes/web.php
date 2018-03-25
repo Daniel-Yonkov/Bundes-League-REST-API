@@ -17,7 +17,6 @@ use Illuminate\Http\Request;
 Route::get('/', function () {
     $request = new MatchData();
     $response = $request->get();
-    dd($response);
     return view('matches.upcoming',compact('response'));
 });
 //using controller to handle the actions
